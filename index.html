@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Othmane Dhilou, élève ingénieur Data Science & IA à l'EMSI Rabat, orienté data engineering. Recherche un stage PFE de 6 mois à partir du 1er février 2027.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Othmane Dhilou – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F6F8; --surface:#FFFFFF; --fg:#13222C; --muted:#56656F; --line:#D8E0E5;
+  --accent:#0A6C9C; --accent-soft:#E2EFF6; --green:#1F8A62; --green-soft:#E1F2EA; --amber:#A8650A; --amber-soft:#F7EBD8;
+  --display:"Sora",ui-sans-serif,system-ui,sans-serif;
+  --body:"Source Sans 3",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0D151B; --surface:#141F27; --fg:#E4ECF1; --muted:#97A6B0; --line:#25333D;
+  --accent:#5BB4E2; --accent-soft:#16303F; --green:#5CC79C; --green-soft:#153328; --amber:#E2A750; --amber-soft:#3A2B14; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D151B; --surface:#141F27; --fg:#E4ECF1; --muted:#97A6B0; --line:#25333D;
+  --accent:#5BB4E2; --accent-soft:#16303F; --green:#5CC79C; --green-soft:#153328; --amber:#E2A750; --amber-soft:#3A2B14; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.2}
+.label{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* hero */
+header.hero{padding-block:3.5rem 2.5rem;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;letter-spacing:-.02em}
+.hero .role{font:500 1.2rem/1.4 var(--display);color:var(--accent);margin-top:.6rem}
+.hero p.lead{max-width:62ch;margin:1.1rem 0 0;color:var(--fg)}
+.photo{width:148px;height:162px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.status{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.3rem;padding:.4rem .8rem;border-radius:999px;background:var(--green-soft);color:var(--green);font:500 .85rem/1.2 var(--mono)}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
+.links{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-top:1.4rem;font:500 .92rem/1.4 var(--mono)}
+.links span{color:var(--muted)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-top:2rem;font:500 .8rem/1 var(--mono);color:var(--muted)}
+.flow b{font-weight:500;padding:.45rem .7rem;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+.flow i{font-style:normal;color:var(--accent)}
+
+/* filters */
+nav.filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.filters .wrap{display:flex;gap:.5rem;overflow-x:auto;padding-block:.8rem;scrollbar-width:none}
+.filters button{flex:none;font:500 .85rem/1 var(--mono);padding:.55rem .9rem;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.filters .count{opacity:.6;margin-left:.35rem}
+
+section{padding-block:3rem 1rem}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem 1rem;margin-bottom:1.4rem}
+.sec-head h2{font-size:1.6rem;font-weight:600}
+.sec-head p{margin:0;color:var(--muted);max-width:60ch}
+
+/* project cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem}
+.card{display:flex;flex-direction:column;gap:.75rem;min-width:0;padding:1.3rem 1.3rem 1.2rem;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.card.featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:1.6rem}
+.card .top{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.tag{font:500 .72rem/1 var(--mono);letter-spacing:.04em;padding:.35rem .55rem;border-radius:5px;white-space:nowrap}
+.t-de{background:var(--accent-soft);color:var(--accent)}
+.t-ai{background:var(--green-soft);color:var(--green)}
+.t-web{background:var(--amber-soft);color:var(--amber)}
+.year{font:400 .8rem/1 var(--mono);color:var(--muted)}
+.card h3{font-size:1.15rem;font-weight:600}
+.card .ctx{font-size:.92rem;color:var(--muted);margin-top:-.4rem}
+.card p{margin:0}
+.card ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem}
+.card li::marker{color:var(--accent)}
+.stack{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:auto;padding-top:.3rem}
+.stack span{font:400 .75rem/1 var(--mono);padding:.35rem .5rem;border:1px solid var(--line);border-radius:4px;color:var(--muted)}
+.repo{font:500 .85rem/1.3 var(--mono);word-break:break-all}
+.repo.private{color:var(--muted)}
+pre.arch{margin:0;padding:1rem;overflow-x:auto;background:var(--bg);border:1px solid var(--line);border-radius:8px;font:400 .76rem/1.55 var(--mono);color:var(--fg)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem}
+.facts div{padding:.7rem;border:1px solid var(--line);border-radius:8px}
+.facts b{display:block;font:600 1.15rem/1.2 var(--display);font-variant-numeric:tabular-nums}
+.facts small{color:var(--muted);font-size:.8rem;line-height:1.3;display:block;margin-top:.2rem}
+
+/* experience timeline */
+.timeline{display:grid;gap:1rem}
+.exp{display:grid;grid-template-columns:190px minmax(0,1fr);gap:1.4rem;padding:1.3rem;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.exp .when{font:500 .85rem/1.4 var(--mono);color:var(--muted)}
+.exp .when b{display:block;color:var(--fg);font-family:var(--display);font-size:1rem;font-weight:600;margin-bottom:.25rem}
+.exp h3{font-size:1.1rem;font-weight:600}
+.exp .org{color:var(--muted);font-size:.95rem;margin:.15rem 0 .7rem}
+.exp ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.skill{padding:1.1rem 1.2rem;border-top:3px solid var(--accent);background:var(--surface);border-radius:0 0 8px 8px}
+.skill h3{font-size:1rem;font-weight:600;margin-bottom:.5rem}
+.skill p{margin:0;color:var(--muted);font-size:.95rem}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1rem}
+.certs div{padding:1.1rem 1.2rem;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.certs ul{margin:.6rem 0 0;padding-left:1.1rem;display:grid;gap:.3rem}
+
+footer{margin-top:3rem;padding-block:2.5rem;border-top:1px solid var(--line)}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:center}
+.copy{font:500 .9rem/1 var(--mono);padding:.6rem .9rem;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.mail{font:500 1rem/1.4 var(--mono);user-select:all}
+
+[data-cat].off{display:none}
+
+@media (max-width:760px){
+  .hero-grid{grid-template-columns:1fr}
+  .photo{order:-1;width:112px;height:122px}
+  .card.featured{grid-template-columns:1fr}
+  .exp{grid-template-columns:1fr;gap:.6rem}
+  .grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){.card,.exp{transition:border-color .15s}.card:hover,.exp:hover{border-color:var(--accent)}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="label">Portfolio · Rabat, Maroc</div>
+        <h1 style="margin-top:.7rem">Othmane Dhilou</h1>
+        <div class="role">Élève ingénieur Data Science &amp; IA, orienté data engineering</div>
+        <p class="lead">5<sup>e</sup> année à l'EMSI Rabat. Je construis des pipelines de données batch et streaming sur Azure et Databricks, et des systèmes d'IA mis en production : vision par ordinateur sur site industriel, transcription de la parole, RAG.</p>
+        <div class="status">Recherche un stage PFE de 6 mois à partir du 1er février 2027</div>
+        <div class="links">
+          <a href="https://github.com/othmanedhilou">github.com/othmanedhilou</a>
+          <a href="https://www.linkedin.com/in/othmane-dhilou-783169300">linkedin.com/in/othmane-dhilou</a>
+          <span>othmanedhilou4@gmail.com</span>
+          <span>+212 771 676 074</span>
+        </div>
+      </div>
+      <img class="photo" alt="Othmane Dhilou" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAFAASQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6eoopKsBaKKKACikooAWkooNABRRRQAUUUUAFFFFABRRRQAUUUUAFFFAIIODnHXFABRRRQAUUUUAFFFFABQKKKAFopKKACiiigApaSloABRRRQAUUUUAJRRSUALmiiigAooFFABRRRQAUUUd6ACiigUAFFRzzxwIWkdUGCcscAAdT+FeT+Kvj/ounLLHpcv2m6hdl8sISDjIO49BnHbPWk3YaVz1S4v7a1fy5ZVVyDhSeW4zx+ANcbrHxj8L6TvVr+KR9jNGEbcHK9Rke/wCfavmzxd8TvEGvXEzvfSQw3D5SJW5RMdOPqa4We/keMR7lWRmzgAcD61HN2L5Etz6O1j9qSxEnk6Tpr7lJJe46MAMjAyMfU9PSvO5/2gPEl9dm9ubtpYkc4hhdo4VBPA+U5JxkZJOK8wmuAokg4MzZwp52g9Tn8OlVIbIxsgXzI1yMH1GOcj/PWldjskeleJPjz4yvcGw1G7sLMtlFRwzLkd2xk/U96q2Hxu8aWLQNBr00pKgEPGNoI4DMOhri7WUlBCmCpHy4HBOKfbwJHEzIirwTh+cDPPWi4HqOhftIeMdIlkGoSW2o84AuVxnP93BHPf8Awr2Hwx+0R4X154re6L6bMVG9rrhAe/Izj8cV8mosc7CSTDhhkq3Q8f8A1jSHNrLHJBHIrElmCntkd+9HMw5UfoHZ3lvqFutxayrNC/KuvRh6g9xU1fMXwc+K1tot6LXU5AkTj5pCSxkY5xyTxzgf0r6Ws7tL2BJk43ru2nggHpkdqtO5Eo2J6KKKokKKKKADNFFFABRRRQAUUUUAFFFLQAUUUUAJRSUtABiiiigAxRRRQAUGiigAooooAKjnuI7aIyOcAVJXj3xl+IP9i3kFjbXPkz26NMAFJ82QFSiHt2Oc+oNJuw0rnDftA/Ey5bGn6TfNEZwbW4QSYCruBJ6Z52r6dDXz7Pqjwp+6kTZn5gueT75/Gum8Zamnia8uLkoYZbqRpWDYHzH6dK4iW2f5DKDsyVYen+cVluzTYu3OsM65LnLgBQvAA/zxS6dctcTLEvCjLyDrgAc8+9U5bQhgoA55HpimpJLaMVAIGcn6+/4UxF9dUS3ikAjV8gszMM5c84/AVHFqUk6r57sy8qGB6/8A6/6VnSq06lVOVyTx3z3pkqOE8rAXaScg9cAf/XoBm1HqAiI2IvGR068dh6c1bi1JXhkEgzII2/dntnB/xrmYLh4GzH97GCeu0VN9pIi8qEEbyN7YyxoBG/ptzswmfNVDjdjgDgjFW/ODM8OfNcvti9jn/wDX+VZ1hciGIxZyMZI649M+p4pJrn7I6kI3mOMMScYz/X+VIpGs07wOrwts2SAKy9Tj0P1r6B+BvxY+2Xy6BqBClyds0jEl29Ce55PJNfNqXqyFAmMR4w7cKv8A+qtfSNaOl3Ntc28hDxSCUjg5wc9CMHt1oWg9z79UggEMD7iiuF+F3xA07xholuPtKLqKqVktn2rIMd9oPT3ruq1TuYtWCiiimIKKKKACiiigAooooAKWkpaAFopKKAEoopKAFoopaAEooooAKKKKAClpKWgDP8QanBo2jXeoXLFYLeMyOQcEAV8S+J/Ftz4t1m41K+eSXzZCYo2bJVR8oyR1OAMnHavpf4+eOrXwz4XksxGJ7u4+VYyCVXI/i7H6e1fISXayTsfMKP32j36Cs5s1gh9/E/klI42AI3Plhj8jWNJeiDKIAwA65zj86179Syl3UgLjgnLOewqnFp737ABQNx+4ves72L5W9EZBu3I2IDg98ZFadjYXdwoKq0gI+YFc8V2nhn4Zz6nNHuVVR/boK9m0T4fafplokUUOX24LHrn+lc9TFRjojqp4OUtWfNTeH7iJz9nikYfxqOdo/wAKv6f4Xk1BPkVgVbDhhx789q+lYPBFkjBZIkdc9Soyast4OsYmLQ2yIQd2dvU/41l9c8jZYHzPmTUfh/dxJ9otYJHt3+7wcn3xVa08GaiuZDaEuoztPcV9YroMITHl8YxjtVC68HWlw24xqDnOV4rP68zRZfHufMX9k3wtt8KSIpPKxr936mqFzpV7Zh3VSSRypyc/n0r6dk8HwqQggQr1OBjNYt/4CtpFl2RKjEDBxRHG6ilgNNGfNjXEcW2OeMqAc8kkk1at5T5qzAySFfm2kBQv1HU12njrwFLp482FNwAyWI6Vw9jiNnVl8twPmPdwOtd8Kimro86pTdOVmeu/A3xemheN7FJJ5Egv2+zsYip5OMZzzjOOnNfY9fnvpl2tmba5t8NCkofbIuffmvvPwrf/ANpeHrC6wwEsCOpJzlSARz3ram+hjUXU1aKKK0MwooooAKKKKACiiloASilpKACilzRQAlGKOtFABRRRigAooooAKKKKAClpKWgDwb9qjSLSTQbHVFjf7bHOEZljyGjx3PbBxj618qu7RuJVK5I5Oe4r7D/act4E+H0l68DNNFKgEi/wjPfnnrx1r40CiSIyDcWLEKT39cCspLU0i9DTEzSCMysS/cepIrtvBOhPezLL5YMa428cjHrXDaBbPe6ikRVmTOM4r3bwXo/2a3DsMAkjI7j0rgxVXlVj0cHS53c7DwxpaQxo5wxGQD04NdfBCAMYrF01ViGFAUda3LaQbcmvLTuz1pKyJBCoOdvPrR5J9B9KmHzc0DJBxWljO5EIsKfrTXhBFTMAO31zUbkkHFS0UmUpYQCQOtZ9zH6dfpWhMWQnB61TlGeorFmqOQ8W6VHeWR8xMjPGB7V4FrOmRW+oyMhG0A9K+nr2FZISrDI9K8S+InheQTvJaAju2OgBNejg6lnZnnY2ldXRxFziPyhbqUjDYcDpjGK+tP2ctai1LwGloHxPZuY5I8nC88EA9M+x/Kvkryz5AVgVdY/Kb3Of/rV9P/stRlPCd+TubNz94pwSBzhu/wBP8a9WD1PJmtD2s0lFFbGAuaKKKACiiigAooooAWkopaAEooooAKKKKACilpKACiiigAooooAKKKKAPPPj/o41n4V60oi82W3jFxGucYZT1/LNfFtpbEWyFgqsW4A6j0r9CtY02LWNLu9PnAMdzE0ZyMjkda+EvEPh+58N+Ir3SL5fLntZWTbng4OAQPcc/jWc+5pA6H4caLBcSkyKCzPn6gdK9jtLVYogAMY9q8/+Fmnlo5LqVSEjO1PQk9f516bbDzWwOnvXh4p3nY97CR5YImtAeCQTW1bfKoyKoJHHbqGZ1ANOGr2kWd86DHqwFZU6TN5VEbaAEZx1p+wAcVkWmu2twTsmVuBwD29avRXySgbT17GujktuZXb2JyvHTk9qiOFJBIxUNxqKwrkmuZ1fxrp9g0n2iXAXuO319KFT5thufLudJKqt3HPSqckWARnmvKZ/jK01zJDZWUkyJ/H0H1J7Vl3nxi1R3wqWsTDBwJVc/ocVX1KTMXjYo9bnXGc/rWF4g8OrqVi8lt8tygJQHofauL0n4v3DuU1Cz86Jujxnla9A8PeIbPxBai5smbaDhlYYZTWTozpO5pGtCqrI8H1jTTbzvMY9m7PB4wc819Nfs6aZLp/w3gkkAUXU8kq8dRnGfxxXjfxP0tLa+kuEQlJYzKFX17/rX0t4D0v+xvBmjWJTY0VpHuX/AGiMn9TXrYaXMrnkYqPK7G7RRRXUcYUUUUAFFFFABRRRQAUUUtABRRiigBKKKSgBaKKKACiiigAooooAKKKKACvnf9qTwesMmm+L7eMfM62d0FXknkoxP5j8q+iK5D4r2FhrXgjUtIu7mOCa5hLWwbq0ifMv4ZAyfeplsVHc8X+H0Kp4UtJhgCTcx9uT/hWP4j+It3vks9ASMRqSJbyVgqjHZcnmtPwuxtvCENhHNBHdvK8ap5qs20nJcAHngk/lXG3HhvZqbksUhU4Bzz+NeVGnFTcpnsSqScFGBSvvE+vShJJdYlmzkAQxO2P/AEGuevNc1iY7DeXpZj/FERx+td/J4p0jSogixxyMPlDHgMfbufwrltR8f6fczGOC1JlOcbYsD9T710Rm38MTCVNL4pGh4W8W6nbzwxXYkAVGTd/fHUfka9a0PxAZoI2Z8nHOeteMJM0l2tneWphmc4GQQOenPT9a9P8AAFqVCxTIktxGxRxIDnIP1xgrt7Vz1r7vQ68O7aLU6fUdSEls3DdDjivGddguNQvbks+I1Ygsf4m9Me1e86lo9xHDJPC29ipKwnG0ew4rxXVbGY6THfBmcyscpECSHLHIz25B754qKTa2LrJStdHKxeGobqVY57x2YnhS2APoorr9J8J+HrCPfKrM4XGWRjj8xXNzeH9Tm08XNoZlvBICbZFYZT6nBJ6d6b4d0DVIjJJfy6hbzKm2MRzHcz564ya6nFtXcjjTipWUDtW0LTLhQ1q0UgX+EMDWloTHw9Kri2nnWdxH5FqgLbsE7uSOMA5rmNL0bXVuVe88tpCeJlO2QD3xwa9AsrOeP7CsjDc84XcP91if0BrmlO2j1OlU01daMZ4hsdL8QX+nW1/qn9nFpvKCSwFvNXcpxkHCnHrwK970TV7LXdLg1HTpDLZzDMMmCA6jjIz1HvXh3i3wpD4gsbe0mO2ITgvg4LLggjP5V0PgPxTZaTq8Gg2k0phh2wFGJ2qMYGM+ntWtDFRhaLW5jXwU6t5p7Hr1JSmkr1DxwooooAKKKKACiiigApRSUtABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAV5/8Tp9NvzFo97HbksuVmckPGzdNhBBB4zXoFeG/GXQ31zxdaxYwuF+buMAdPzrlxc3Gn7p6GWUY1a1pdmc3pPhqbw/Y21vcXJuZYL4u1w3JZHyoyf8AgYq14h8JNfwsEmMasOdo5NbA06NFk053keNl2FnPzYI9fWtXSbgTKbW5AN1DgSf7Q7OPY/ocjtXkyk27nqRilp0PF08CDTr8XHmOWThPMGcVPB4Q0/7QZzpiTXDNuBQvjP8Au9Ote3NpUExzsXOPSlXR4o+Sq4HoK0VaZPsIdjyyHws6o91Lp6SyKCwRmO5vbdzg10ngKKc/bLy6w0pufJUg5+4oUjPsQR+FbHie+j0mxCwqr3k7eXbRd2c9z7DqT6Cp/D+miwtra3J+WFAMnq7HlmPuSSfxocm1ZjjBKV0dFdbvs+V+/jivOIdIhsNZu7WVtonZ7i2RvuurHLr9VbnHow969IuQnlZLgHHTNcvrGlDVCqhykiN5kMqHDRSDoR/h0I4pK8WW4qSMZvBMc4WUF1JGcZ/pRD4IEb585wPQKBWhaeJrnTcwa3YzZTj7VaxmSI+5UZZD+BHvWini/wAPSEgalATjdtAJb8sZqWpDvEqWfhuC1YOdzt6mn/Z1udU3xj/R7JTHkdDM2M4/3V4/4F7Vb+2SaqAloslrE33p5Fw5H+wp6H3bp6GrCwxWcCwQJsjQcLnP4n1PcnvUNW3DdlW5QNA4JIwpOcZxjmsiXS4pLvTdasnDhWVWKjBdT0J/GthpTnp+FZuhyxxtPYlshQXUemDStdG1KTTdj2u1kM1rDIerorH8qfUVl/x5W+Onlr/Kpa+ijsfKS3YUUUUyQooooAKMUUUAFFFFAC0UlFABRRRQAUUUUAFFFFABRRRQAUUUUAFcL480xV1SzvwPvkIT6f54ruq5/wAbwPLoytH99JVOfTr/APWrnxMeamzqwVRwrJrroeWNIFvbgc8SHrV6OzjvNjFnilTJSWM4ZP8AEHuDwar6pEkN5HIqlRIPmPYt3/nVuzkAI5Ga8brc93q0WBqGpWJw9nHfDOA0DeW34qcj9ajuNR1683JZaQtqOnm3kwwPfauSfzFaVvcBOQKZd3RZCqH5mrXmSQuRtnMw6XHZ6mdR1G4a9ulGGmYYVR12ov8ACv8APvXG618ZYV8QJp6aRqXkF9guY49wJz/dHOK9G1LThLp0qv1ZSSa8+ttT06y8yKSVpimWI2AEevNFP3ndoJtRVk7G9P4r82M7TI+EzhBktXMaf8Q/FdvqjIfCk4skbmWScE4z1GBj9auBbKVJr2JbhRHwyMetZ76zdGXyhap5LHG1vpkfUGqUN7ol1Vo7new6pJqMovLTKNsG4evtXRWN1HOgZ4UDnhuK5Lw5rmmmFFR413KD8vQf56V0MVxBP+8tZVbgZANYXcWauUZbGu8qjooGKpXDK3OeetRGdtpJxVWS4JJzj3pyldAo2ElIHI554p+m2sU0bADy2JJLDqeeRVV3yueorqfD/gTVVC/2nc28MGd2yAlnYehJAxTp0pVNIoznWhS1k7HdWP8Ax5W//XNf5VNQqhFCqMADAHpRmveSsrHzcnd3CiiimIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACg0UUAJS0UUAGKp6vp/8AamnyWok8tmwVfGdrDpxVyik0mrMcZOLujyfxH4U8QWtu17d/Y2tbYjPkuSxyQM4xwPWsO3nIIAbpxmvbb60S/sp7ST7k0bRn8RXh0kLWs8lu+RLC5R/qDivKxVBU7cux7OExEqrfNubMdyxwQRSXmpRWEBuJscdM1WtZA4wT061xPxKurrfBFG7JFtP0yTXHBc0rM7ak+WN0aereL7jWfMtdMJLnERAPI4Oa52PwrJBMLq8u7e3E64eOX7wwRjpUGhweJbS3kj0nTUiSTH+kTSDeD6464rTsvBktzL5mq6vN50h+YRDAH4nJrsj2iYwouprI6a1TwoIZYYrxCrgeaCpBOBjPNZFzdeFy6xokyxx5CyAAcfnV+HwBowUb728kOPmIkPIovPCHh2BFC2vmkdN5LE/nRyeZ1KjHYwk0nQJYHSw1PypGYsvmDBB7ise01PUvDd/GJp/Og3YaRDuHXviumm8J6TeqQLBIV6Ky5U4rOvPAVlp0Ek1uso8zg73Lbs+xrNzUXZswq0LaxO7sr1b62jmRwyOAcj3qKZgJgoOazdAmW0shD12DAq6sgeUyfhXK1qap6Gpo9q17qdrbgf6yVQRjtnn9K9frzb4f25utbMxHy28RbP8AtHgf1r0mvXwMbQv3PFzCd6nL2Ciiiu04AooooABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAC0lFFABRRRQAUUUUAFFFFABXknxJtY9K8TC4jGFvIxIw7buh/PAr1uvNPi7aedPYt6xsM/Q/8A165cWl7NtnXgm/apI5BLzygJQeO4qlqa2mpyxtOoO0jGfWqENw2TFIOV4qcqGhLnPyHdgHrXjtantX0Omt44GiESgJx2rM1KC6si0ikSx454yQKksZDKRs6ADj0PpWvHZfaE+foaUfdZalfVHnOq+LtYtUEkMMSrn5A0eCwp+l6zruoMGlG1ZMbSFx17Zrt9T8M2LwZlBOOV470/Q9JtRYxjaGGM5z/Kunn90i87/EVtNsiiLJMSzehqS9LSgqUB9M9K2Gt0ToOBWVemNSWYkEgAD/8AXXI7tml7I54edBcSrnh2q6kvkR896SeaIAu3UcAVSE4up1UNx3prcXQ9V+FaA2d9KfvO6flg13NcX8Lx/wAS68P/AE0UfpXaV7mF/hI8DF/xpBRRRXQcwUUUUAFFFFABRRRigAoopaAEooooAKWiigBKKKKACiiigAooooAKKKKACiiigArzP4ia5p2o62ujW0/m3tgm65CjKx7/ALqk/wB7AJx6Yq98XPizpvwz0VzuSfWLhCLS1B5B6b39FB/PpXlPwgs7nUPhvf8AiO7kee9vNakkmmc5ZxtAyfxJrnxUb0pI6cI7VYhrdmyN50XDL+tZR1grG4YjIU5B713F3aLPGTxnuK4vWtEYSmSMYz1xXiwknoz3JxfQveGPF9vfQ4ClWRsHP9K6KHxfasuY3BUA9On1z6cV4RqNvqOhzXDwGT7MR1zgrnr/APrqlD4reBNizMcKDgNgADiu1UFLVHD9YcdJHvN14sN0u+NSVUM3J7Y6fzrHj8VyoY1ikCBTlcfxd8Y9K8rHi+4WIQqcb+T6YPWqw8UeX5aB2OGHA5wPSqVEHibnt8Pi8XgVYpDltytk9D2/CqfibxXBCy7drGIfma8htfFItVJWTDGTIUDJrW0uLVNfulmlRobfcT8y4ZhWcqKjqy41nLSO524vXuEUbh8/zZHGK19LgwA2PrWdp2lltuR+JrooI1hQKOfWuKclsjuhF9Tuvh/rtjprJpd1L5U+oSt9mZ+FkZFBKA/3sHIHfn0r0Kvnj4radcn4NtqlozQ3Om6nFexyocMmDsJB7dR+Vd18F/jHYfEfRYLW9nig8QQptmgJx5+P+WieuepHb6V7uHVqUV5Hz+Ld6smemUtJRW5zhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAGiiigAooooAKKbNLHBE0ssiRxoMs7kBVHqSeleUeOP2kvB3hPzLfT5X12+XI2WpAiU+8h4/LNAHrNeUfFz496R4Agl07Snh1LXSMCJW3RW/vIR3/2Rz64r568bfH/xp428yA339l2DZH2WxJQMPRm+83549q83eQsxJJJPUmlcZf17xDqXiXU7jU9Vu5Lq7uX3ySOck+w9AOw7V9R/s+2J1D4IvbIA0rz3DqP9oPx/Kvko9a+sf2U9QEngOS1J/wBTfSrj6hW/rRFXumOMmndFm0uI7u3SaLhW6g9VPcH6GoryySUZ28/pVnxZpb+E/FspA26dqbebF6JJ/EPxPP41LtDqCvQ96+cq03Tm4s+mpzVSCkjiNX0RZtw29a4bVfhzZXjlkDwSYxujr2e4sxKpGKzJ9LXkcfjVU6so7MipRjLdHir/AA9midEivjtHDb05/Cn/APCuDOwzfSIS2WIGePSvU7nSMnKgE+lRxaQ4I3KAex9K2+sz7mP1Wn2OQ0jwLpelyh0iaacD/WSc/l2rrtP05UA6elX4NNC8MavQWipgKv41hOo5bs6IUoxWiGW8YQfKPxpby6SztWmbkjhVHVieg/OrDlIEJY8CqPhu1fxX4ztLUKWs7M/aJvQkfdH58/hU0qbqTUS6k1CDkdl440gQ/BnVLCcAudOlkcn+8FLZ/OvjfStQutOmjubO4ktriFg8csTFWRh3BHSvtX4x3S2XgLXQMYXT5VA+q4r4eibFfSNWSSPmZu7ufVvwd/aPttdEWh+Mp4bTUOFhvzhYp/Z+yt79D7V7yCCAwIIIyCOhFfm4Dzmu78IfGrxr4KVIdO1Z5rROlpd/vY8egB5X8CKSZB90UV4J4N/az0PUdlv4n0ybS5jwbi3zLCT6kfeH617PoHinQ/FVt9p0TVbPUIupMEgYr9R1H4imI1KKKKYBRS0lABRS0lABRS0UAJRRRQAUUVHdXVvYwNcXdxFbwoMtJK4RR9SaAJKWvMPE/wC0X4D8O7o4L6XV7hf+Wdim5c+7nA/LNeL+Mf2ofFeth4NEjh0O1PG6P95OR/vngfgKQH1Hr3ifRPC9qbnWtUtLCLGQZpAC30HU/gK8X8aftXaTp4e38Laa+oSjgXN1mOIe4X7x/HFfM2pa3f6vcNc395cXc79ZZ5C7H8TWezZ70XGdb4z+Kvivx1I39s6tNJATlbWI7IV+ijg/jmuPZi5x3NNZqfGmBk9TSAcBtXHpTWFOOaaTQIaM5r6E/ZT1hYl1zTS3zrJFcqPYgqf5CvnwHBr1T9nC9Nt8QXt92Bd2ci49SuGH8jVQ3GfV/jDw9F4r8PSW/CzqN8T/ANxx0NeVaHfSxF7G7BS4hYo6t1BHFe0aRPviCGvPPij4XeznGvWKY6C4Cjt2b8Oh/CuLH4fnjzrdHpZfiOWXs5bMrMFZeKgkg3AnAIqjpWomeNQSSfetM4PJxmvGSPYM17TncBg+lRm2OQCDWjKpwcfzqAKxPQ8+9AEKw7RyOaRj5fXrVgJgc4FUb59inmnYDK1i9+QoDgV6P8IfDJ0rRm1GdMXF6fNJPUJ/CPy5/GvPvDmhyeJtfgswD5AbzJ2PZB1/PpXvvlpZ2IVFCgLgAdh2FengKO82eZmFbRU0eQftEX5h+HmsYbBlMcX5uM18gJxX0z+09eGPwbaQbiDc3qnGeoUE18zr78V6UjyWPzQTTaWoEMYHO786vaVrN/otyt1p15cWk6nIkgkKMPxFVRUbLsPt2pge4eDP2o/FWi7INdih1y2HBZ/3c4H+8OD+Ir3bwf8AHjwP4vCRpqY027b/AJd77EZz7N90/nXw2rEVNHIVOQaAP0gRldQ6MGVhkMDkGivg3wp8U/Fng9lGka3dQxA/6h28yI/8BbIr2Twx+1k67IfEuhrJ2a4sX2n67G4/I07hY+jqK4fw98a/AfiQIttr9vbTNx5N5+5bPp83B/A120ckc8ayxSJJGwyHRgQfoRTEPopKKAGSyxwRtLNIkcaDLO7ABR6kmuG8XfG7wT4PjxcatHfXDLlbexIlY/Ug7R+JrwX9oT4rXPiTxBP4f027ZdI09zEyxtgXEo+8x9QDwB7ZrxJZSxf/AHjSbGe/eKv2rtevTJF4d0610yE8LLN++l/X5R+RryDxD438QeKpzNrWr3l83YSyEqPovQfgKweaMUgHNIzdabn1oxTTQAE0wmnHrTSOfWgRH5sayDe20HpnpVjOearyQLKMMMioFFxattjzKn909RQMvmo2PPHNG4sBkFfagjHSgQnT3Ndx8GLv7F8StDkzgPKYj9GUiuHxW74Iu/sPi7RrnO3y7yI59PmFOO4H3bp7GKcD2rWvktZ7GRbwxiFlKt5h4IPUVkBlixMThQNxPtXner+Jb7VtSadnZbdTiKPso9cetaSNIRbehT1nw1J4Yvke3lE+nXBJhlBzjn7p9x+taEC+bGPcVt+HJxdQSRylHhb70Ui7kP1FOvNGjiVp9PU+UvLwk5Ke6nuP1FePicHZucNj18PjE/cnuY32ZiOPypn2UkjNaMbKwzTyg/GuNRO1yMxrfaOlYWqo7EqorqZl+U561LouiQzOdSv1P2WJvkQ/8tWHb6UU6cqk1CJM6ipwcpGr4F0Sz8N2Ec9/PFDd3oDkOQCF7Cuq1aQC2LKQQRwR3ry7xPrMl5cvJIfZVHRR2FWvA2uXdyJ9MuZGeLb5kO7quOo+lfQQioJRj0PCqKUnzyPLv2qLjEHh61z1MsmPwA/rXz9jPWvaf2pbvzfFekWmeILIsR7s3/1q8W705bmDADHvTsZ57UgNB9jipEL3qK4uIoUxI3J6AdaZcSTjCxJnP8XYVFFaBW3uS79yaAJ0YsoOCM1KOKYBipBQA4GnqxzwajFPFAEiysprf8NfEHxN4RnWXRtYvLQA5MauTG31Q8H8q53oKQnmgD3/AEn9rXXLaySLUtDsL24XrMsjRbh7qMjP0or50upWEuB2FFFwLs8rSSM7MWZjkk9Sagi5eT6/0pxbc1MTid/cA0gJaMGil7UxCE02nY9aaaBidaaxAp2PSo5k3IR3oAfg9zS9OlJGd8at6ilFACYoNOxSdqBDDkGrFjOba7gnBwY5Ff8AI5qv3peShoGfduoaiZ9BtI4mBkuoEZiOylR/Ouet9BmlPC5FXfhwseqeGtPvJMyvLawtk9ANg4FdklsFGAgFbs0Tsc3pWkNa5YEkHqB2rXtbcxthZAuTkZ7mrQsykhZD16irMVuknBGD3pWsDlc5XWrD+z7pXRAsMozgHIDdwKqqc812F1Y+fC1tLGJIz69R7g1ytzp81rqK2KAyNJgp6sDXlYnDuMuaOzPVwuJU48st0LY2YvbjaxIRfmc+3oPer+qMAgU4RAMIg6KtdBYafHplsI9oZzzIxHU1zN9nUb1mUHbnCj2rrw1BUo+bOPEV/ay02RzdzpJv5iUHHrSafZzaXqEUyKcRn5vde4/Kuxh0zyIhgYJ602TTiY24HSupIwc7nyv+0VeC8+JlwEbckNrCin6ru/8AZq8xIrsPizcfafiFrHORHIsQ5/uqBXIdeKyluYgOlHajtSE7eTSACcUEA/WkDg96XNACEbRuJ4FOBzUdwcqqf3mqQDigBw+lP5xTaUUAKabzmlPpSZxQBVZPMkc/7WP0op8JJVj6sTRQA/vSHidT6gimh8HBpZOGjb3xSAmHSlpqn1p1ACdaSlNJmmAdKa1OppoERwNgunocj8alqLG2cH+8MVL3pALTTThRigZGRinL0pGoSmB9l/ATUftvw70ctyUhMWf91iv9K9MAB6V4n+zDei58CGEnLWt5LH9AQrf1Ne2hcjNa9Cg8rPsaBEQQy/eH607kUu/2oAsALKvTDelUZpbK2uFuZFDTqpRdoyQD1qS7kdogiZBx8x9qqw2aFzlenc96m62YIqahqNzcr5cS+VG/3scsR9aZZWm1s7cACtaWzCqoCgU5IVQVQ09CDys9qhuwEt5D04q8QMVj+JLtbHR7u4bgRRO5/AE00I+FvF119u8Vaxc5yJLyUg+284rHNSTymeWSVuWdix+pOajHNZMkXHFJ0paDx2pANZFPUUgXHfNP60gFAEL/AD3Cr2Vc/nU4FQQDe8j+rYFWR6UABFFBNB5oAQnFNduCaVhnpUMxxGx9qAC2x5K5780UIpVFHtRQAretJKcwk/3eaTcVODSkBlIHcUhEiNmndar27ZUevSrGaYwzRmikPWgB1IcUUYoERTD5cjqORUucqCO4pCOKbA37sqeqnFIZItKaTNHWgCNqF605qQUxH0R+ypqGINdsCfuyQzqPqGU/yFfSMZyoNfJH7Mmo/ZfG95Zk4F3ZNgepRlP8s19bQHMa1otiySmM2Og5p1NciONnPYUwJ4UyQSB05qVIEQ7lHJ/Smw58lD6qP5VN2qSSvc54xUG496sXJ4XPrUDc0xoRuRXD/F6//s34f65cZwRaSKPqw2j+ddueK8i/aU1H7H8OrmENhrmeKED1+bcf/QaYz5F6CkB54pxpoFZEjqTGaXNJmgBDSO2yNm9BTjUM/O1P7zUAPgTZGBUlNHPFOBoACaKQ0E0gEJxVe4Py49SBUzmqzndKg980wJy2OKKYxyaKAHuoNRLlTzTFuCpw1SFlcZBpCGRttdl9DVtTkVnyNsmB6ZFWoXyopgT0maTPFGaBjieKM03NGaQC5qNOJsHowp5qOU7MP/dOaBE4NDUZ70ZoGNpBxSk0hOaYHd/BPUf7N+JuiOThZpGtz/wNCB+uK+2rY/ul+lfn54b1A6Vr+mX4ODbXUUv5MDX6AWTrJbxupyrDI+lXEaLA5NRXB3jaOlSM20cVETwTVDNKMfu06fdFOpsf+rX/AHRS1JJBd/dX61XBqxdfcX61WpoaFJr59/atvwmkaNZBuZbl5CPZVx/7NX0Axr5Y/an1Hz/Fml2AbIt7RpCPQu5/otD2A8SNA4pDxRmsxC96OhozmkNAC1CTvuOnCDH41LnAzUFuSQz92OaALA60Gm5xQWoAC1NZqY70gcEdaQCu3FV1bdOSP4RUkjjFV4TkO3qaAJiTRTd+O9FAEzwq46VWZXhPHK1bL4prMp4OKAZTnbcgYdqsW75UVDPEFBKnj0ptk+Y8ehoA0c0ZqJWp27NMCTNANMGaXOKBDs5psg3IRS5o/hoGLAd0I9RwadnFQQsVldOx5FTZoADSZxxStTRzQA9DivvP4fan/avg3R7wtuM1pExPvsGa+C+lfZPwA1H7f8MtHy2TErwn/gLkfyxVRGj0xjk01vumnbaUplD9KtDL8f8Aqk5/hFOpkX+ojJ/uj+VO60iSG6/1Y+tVs8VauiNg+tUzTQ0Dng18YfH6/N/8UdUGci3WKAe2EBP6k19mscDFfB/xC1D+0/HOv3edwkvpsH2DED9BSlsDOcIoNIaKzEOBpM03NOU80ARXLlIW9TxSIwCgCkuPmlRMZA+alwR3oAczY/8Ar0wsT0IFBFHB9qQDCoPUk/pTXIXCqAvr705jtqPOWzQA2dsLn2qKNtsSgdTSXTfLj1p8CgDc3WgBywlhkkiinGfniigD/9k=">
+    </div>
+    <div class="flow" aria-label="Domaines">
+      <b>Sources</b><i>→</i><b>Ingestion</b><i>→</i><b>Bronze · Silver · Gold</b><i>→</i><b>Modèles ML</b><i>→</i><b>Power BI · API · Apps</b>
+    </div>
+  </div>
+</header>
+
+<nav class="filters" aria-label="Filtrer les projets">
+  <div class="wrap" id="filters">
+    <button type="button" id="f-all" data-f="all" aria-pressed="true">Tout<span class="count"></span></button>
+    <button type="button" id="f-de" data-f="de" aria-pressed="false">Data engineering<span class="count"></span></button>
+    <button type="button" id="f-ai" data-f="ai" aria-pressed="false">IA &amp; ML<span class="count"></span></button>
+    <button type="button" id="f-web" data-f="web" aria-pressed="false">Web &amp; automatisation<span class="count"></span></button>
+  </div>
+</nav>
+
+<main>
+<section id="data-engineering">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Projets data engineering</h2>
+      <p>Trois projets complets, conçus pour Azure, avec tests, CI GitHub Actions et infrastructure Terraform.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card featured" data-cat="de ai">
+        <div style="display:flex;flex-direction:column;gap:.75rem;min-width:0">
+          <div class="top"><span class="tag t-de">Data engineering · ML</span><span class="year">2026</span></div>
+          <h3>Lakehouse e-commerce Olist</h3>
+          <p>100 000 commandes d'une marketplace brésilienne, 9 sources CSV, transformées en architecture médaillon sur Azure Databricks, puis exploitées dans Power BI et par un modèle de prédiction des retards de livraison.</p>
+          <ul>
+            <li>Bronze en append, silver typé et dédoublonné avec <b>MERGE Delta</b> incrémental, gold en modèle en étoile (fact_sales et 4 dimensions).</li>
+            <li>Contrôles qualité bloquants avant chaque écriture : clés, unicité, plages de valeurs, statuts autorisés.</li>
+            <li>Modèle <b>XGBoost</b> sans fuite de données, découpage temporel, comparé à une régression logistique ; suivi, registre et alias <code>champion</code> dans <b>MLflow</b>.</li>
+            <li>Scoring quotidien des commandes en cours vers <code>gold.late_delivery_scores</code>, affiché dans une page Power BI.</li>
+          </ul>
+          <a class="repo" href="https://github.com/othmanedhilou/olist-lakehouse">github.com/othmanedhilou/olist-lakehouse</a>
+          <div class="stack"><span>Databricks</span><span>PySpark</span><span>Delta Lake</span><span>Unity Catalog</span><span>MLflow</span><span>XGBoost</span><span>Terraform</span><span>Power BI</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.8rem;min-width:0">
+<pre class="arch">CSV Olist ──> ADLS Gen2 (landing)
+     │
+ bronze : brut, tout en string, append
+     │
+ silver : typage, dédoublonnage,
+          contrôles qualité, MERGE
+     │
+ gold   : fact_sales + dimensions
+     ├──> features ──> XGBoost (MLflow)
+     │                  └─> scores
+     ▼
+ Power BI</pre>
+          <div class="facts">
+            <div><b>9</b><small>sources CSV</small></div>
+            <div><b>100k</b><small>commandes</small></div>
+            <div><b>6</b><small>tâches Databricks planifiées</small></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="de">
+        <div class="top"><span class="tag t-de">Streaming</span><span class="year">2026</span></div>
+        <h3>Trafic aérien en temps réel</h3>
+        <p>Les positions de milliers d'avions, interrogées sur l'API OpenSky, partent en continu vers Azure Event Hubs puis vers un lakehouse Delta.</p>
+        <ul>
+          <li>Spark Structured Streaming : watermark, dédoublonnage dans la fenêtre, données tardives, quarantaine des positions invalides.</li>
+          <li>Jointure avec 41 aéroports pour compter arrivées et départs ; producteur conteneurisé sur Azure Container Instances.</li>
+          <li>Test réel : 4 026 positions retenues sur deux relevés, 22 mises en quarantaine.</li>
+        </ul>
+        <a class="repo" href="https://github.com/othmanedhilou/flight-streaming-lakehouse">github.com/othmanedhilou/flight-streaming-lakehouse</a>
+        <div class="stack"><span>Event Hubs</span><span>Spark Streaming</span><span>Delta Lake</span><span>Docker</span><span>Terraform</span><span>Power BI</span></div>
+      </article>
+
+      <article class="card" data-cat="de ai">
+        <div class="top"><span class="tag t-de">Data engineering · RAG</span><span class="year">2026</span></div>
+        <h3>Pipeline de données RAG documentaire</h3>
+        <p>Indexation incrémentale d'une base documentaire pour un assistant qui répond en citant ses sources.</p>
+        <ul>
+          <li>Orchestration <b>Azure Data Factory</b> : seuls les documents nouveaux ou modifiés sont retraités (empreinte SHA-256), les supprimés sont retirés de l'index.</li>
+          <li>Extraction, découpage, embeddings Azure OpenAI, recherche hybride Azure AI Search.</li>
+          <li>Journaux d'exécution modélisés avec <b>dbt</b> (22 tests) et suivis dans un tableau de bord Streamlit.</li>
+        </ul>
+        <a class="repo" href="https://github.com/othmanedhilou/rag-document-pipeline">github.com/othmanedhilou/rag-document-pipeline</a>
+        <div class="stack"><span>Data Factory</span><span>Azure Functions</span><span>AI Search</span><span>Azure OpenAI</span><span>dbt</span><span>DuckDB</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Projets en entreprise</h2>
+      <p>Stages et missions freelance, du modèle à la mise en service.</p>
+    </div>
+    <div class="timeline">
+
+      <article class="exp" data-cat="ai">
+        <div class="when"><b>Juil. – sept. 2026</b>Stage IA &amp; Data<br>Aïn Atiq, Maroc</div>
+        <div>
+          <h3>Ciment's Eye : supervision vidéo intelligente d'un site industriel</h3>
+          <div class="org">Ciments du Maroc (Heidelberg Materials), usine Asment Temara</div>
+          <ul>
+            <li>8 modèles de vision en production (<b>YOLOv8</b>, OpenVINO sur CPU) : port des EPI, feu et fumée, chutes de personnes, véhicules et plaques.</li>
+            <li>Pipeline multi-caméras (RTSP) avec un thread par caméra, suivi des objets, zones surveillées, règles anti-répétition.</li>
+            <li>Alertes Telegram avec capture et clip vidéo, historique SQLite, état de santé des caméras ; guides d'installation, d'exploitation et de réentraînement.</li>
+            <li>Volet complémentaire : éclairage défaillant, engins (ByteTrack), anomalies de convoyeur en 10 classes, lecture de plaques.</li>
+          </ul>
+          <div class="stack" style="margin-top:.8rem"><span>YOLOv8</span><span>OpenVINO</span><span>ByteTrack</span><span>OCR</span><span>SQLite</span><span>Docker</span></div>
+          <div class="links" style="margin-top:.8rem"><a href="https://github.com/othmanedhilou/asment-s-eye">asment-s-eye</a><a href="https://github.com/othmanedhilou/MODELE">MODELE</a></div>
+        </div>
+      </article>
+
+      <article class="exp" data-cat="ai de">
+        <div class="when"><b>Déc. 2025 – juin 2026</b>Stage Data Science &amp; IA<br>Casablanca, Maroc</div>
+        <div>
+          <h3>Pipeline d'analyse vidéo</h3>
+          <div class="org">InnovaTech</div>
+          <ul>
+            <li>Gros volumes de vidéos traités sur <b>Databricks / PySpark</b>, puis transcription automatique (Whisper, Vosk).</li>
+            <li>NLP multilingue et extraction des informations clés en données structurées.</li>
+          </ul>
+          <div class="stack" style="margin-top:.8rem"><span>Databricks</span><span>PySpark</span><span>Whisper</span><span>Vosk</span><span>NLP</span></div>
+        </div>
+      </article>
+
+      <article class="exp" data-cat="web ai">
+        <div class="when"><b>Juil. – sept. 2025</b>Stage Web &amp; IA<br>Salé, Maroc</div>
+        <div>
+          <h3>Plateforme éducative accessible</h3>
+          <div class="org">Organisation Alaouite pour la Promotion des Aveugles au Maroc (OAPAM)</div>
+          <ul>
+            <li>Plateforme éducative accessible aux personnes malvoyantes.</li>
+            <li>Assistant conversationnel basé sur un LLM.</li>
+          </ul>
+          <div class="stack" style="margin-top:.8rem"><span>LLM</span><span>Accessibilité web</span></div>
+        </div>
+      </article>
+
+      <article class="exp" data-cat="web de">
+        <div class="when"><b>2024 – aujourd'hui</b>Freelance<br>À distance</div>
+        <div>
+          <h3>Données et automatisation pour un annuaire d'entreprises nord-américain</h3>
+          <div class="org">Clients internationaux · annuaires locaux d'entreprises et d'événements (États-Unis, Canada)</div>
+          <ul>
+            <li>Collecte (scraping) et nettoyage de fiches d'entreprises par ville et par secteur, import en base avec correction automatique des coordonnées corrompues et repli sur le centre de la ville.</li>
+            <li>Campagnes d'e-mails via Amazon SES : notifications d'approbation, fin de bannière gratuite, nettoyage des adresses en échec.</li>
+            <li>Alertes d'événements par ville et catégorie avec double opt-in, système de leads prépayés pour les entreprises, données économiques par ville.</li>
+            <li>Audits SEO, pages de ville, landing pages et calculateurs ; rapports automatisés en Python.</li>
+          </ul>
+          <div class="stack" style="margin-top:.8rem"><span>Python</span><span>Scraping</span><span>pandas</span><span>Amazon SES</span><span>SQL</span><span>SEO</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="github">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Autres projets</h2>
+      <p>Projets académiques et personnels publiés sur GitHub.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card" data-cat="ai de">
+        <div class="top"><span class="tag t-ai">Speech-to-text</span><span class="year">2026</span></div>
+        <h3>Collecte de news TV par transcription</h3>
+        <p>Capture des flux IPTV de chaînes marocaines toutes les 30 s, transcription faster-whisper, entités nommées spaCy, résumé et classement par thème, puis recherche et alertes dans un tableau de bord.</p>
+        <a class="repo" href="https://github.com/othmanedhilou/snrt-speech-to-text-mvp">github.com/othmanedhilou/snrt-speech-to-text-mvp</a>
+        <div class="stack"><span>faster-whisper</span><span>ffmpeg</span><span>spaCy</span><span>Streamlit</span><span>SQLite</span></div>
+      </article>
+
+      <article class="card" data-cat="ai">
+        <div class="top"><span class="tag t-ai">IA agentique</span><span class="year">2026</span></div>
+        <h3>Learning Path Architect</h3>
+        <p>Système multi-agents qui diagnostique le niveau d'un étudiant, repère ses lacunes, construit un parcours qui respecte les prérequis et planifie les révisions (SM-2).</p>
+        <a class="repo" href="https://github.com/othmanedhilou/MSA-Learning_Path">github.com/othmanedhilou/MSA-Learning_Path</a>
+        <div class="stack"><span>LangGraph</span><span>RAG vectoriel</span><span>MCP</span><span>A2A</span></div>
+      </article>
+
+      <article class="card" data-cat="ai">
+        <div class="top"><span class="tag t-ai">NLP</span><span class="year">2026</span></div>
+        <h3>Analyse de sentiments, avis Amazon</h3>
+        <p>Classification des avis clients en positif ou négatif, en comparant Bag of Words, TF-IDF et BERT.</p>
+        <a class="repo" href="https://github.com/othmanedhilou/sentiment-analysis-amazon-reviews">github.com/othmanedhilou/sentiment-analysis-amazon-reviews</a>
+        <div class="stack"><span>scikit-learn</span><span>Transformers</span><span>BERT</span><span>NLTK</span></div>
+      </article>
+
+      <article class="card" data-cat="ai de">
+        <div class="top"><span class="tag t-ai">MLOps</span><span class="year">2026</span></div>
+        <h3>Pipelines ML reproductibles</h3>
+        <p>Suivi des expériences avec MLflow, puis versionnement des données et du pipeline avec DVC pour réentraîner à l'identique sur de nouvelles données.</p>
+        <a class="repo" href="https://github.com/othmanedhilou/mlops-tp2-mlflow">github.com/othmanedhilou/mlops-tp2-mlflow</a>
+        <div class="stack"><span>MLflow</span><span>DVC</span><span>scikit-learn</span></div>
+      </article>
+
+      <article class="card" data-cat="web">
+        <div class="top"><span class="tag t-web">Web</span><span class="year">2026</span></div>
+        <h3>HAYATI</h3>
+        <p>Application web avec un front Next.js en TypeScript et une API Laravel.</p>
+        <div class="links" style="margin-top:0"><a class="repo" href="https://github.com/othmanedhilou/hayati-frontend">hayati-frontend</a><a class="repo" href="https://github.com/othmanedhilou/hayati-backend">hayati-backend</a></div>
+        <div class="stack"><span>Next.js</span><span>TypeScript</span><span>Laravel</span><span>PHP</span></div>
+      </article>
+
+      <article class="card" data-cat="web ai">
+        <div class="top"><span class="tag t-web">Web · Recommandation</span><span class="year">2026</span></div>
+        <h3>RecipeHub</h3>
+        <p>Gestion de recettes avec favoris, notes et commentaires, et recommandations calculées à partir des interactions des utilisateurs.</p>
+        <span class="repo private">Dépôt privé</span>
+        <div class="stack"><span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span></div>
+      </article>
+
+      <article class="card" data-cat="web">
+        <div class="top"><span class="tag t-web">Application</span><span class="year">2026</span></div>
+        <h3>Smart To-Do</h3>
+        <p>Gestionnaire de tâches en Java, avec un jeu de données de tâches pour tester le tri et la priorisation.</p>
+        <a class="repo" href="https://github.com/othmanedhilou/Smart-to-do">github.com/othmanedhilou/Smart-to-do</a>
+        <div class="stack"><span>Java</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="competences">
+  <div class="wrap">
+    <div class="sec-head"><h2>Compétences</h2></div>
+    <div class="skills">
+      <div class="skill"><h3>Data engineering</h3><p>Python, SQL, PySpark, ETL/ELT, architecture médaillon, Delta Lake, Spark Structured Streaming, Kafka, modélisation en étoile, SCD2, PostgreSQL, MongoDB</p></div>
+      <div class="skill"><h3>Cloud Azure</h3><p>Data Factory, Data Lake Storage Gen2, Databricks, Event Hubs, Functions, AI Search, Azure OpenAI, Synapse Analytics ; Oracle Cloud</p></div>
+      <div class="skill"><h3>Orchestration &amp; DataOps</h3><p>Airflow, dbt, Unity Catalog, Great Expectations, Docker, Terraform, GitHub Actions, Git</p></div>
+      <div class="skill"><h3>IA &amp; ML</h3><p>scikit-learn, XGBoost, MLflow, DVC, YOLOv8, OpenVINO, Whisper, spaCy, Transformers, RAG, LangGraph</p></div>
+      <div class="skill"><h3>BI</h3><p>Power BI (DAX), Streamlit, pandas</p></div>
+      <div class="skill"><h3>Langues</h3><p>Arabe : langue maternelle<br>Français : courant<br>Anglais : courant</p></div>
+    </div>
+    <div class="certs">
+      <div><div class="label">Obtenues</div><ul><li>Oracle Cloud Infrastructure AI Foundations Associate (2026)</li><li>Google Advanced Data Analytics</li><li>IBM Data Science</li></ul></div>
+      <div><div class="label">En cours</div><ul><li>Microsoft Azure Data Fundamentals (DP-900)</li><li>Microsoft Fabric Data Engineer Associate (DP-700)</li><li>Databricks Certified Data Engineer Associate</li><li>AWS Certified Cloud Practitioner</li></ul></div>
+      <div><div class="label">Formation</div><ul><li>Diplôme d'ingénieur Informatique &amp; Réseaux, option IA &amp; Data Science, EMSI Rabat (2024 – 2027)</li><li>DEUST MIP, FST Mohammedia (2021 – 2024)</li></ul></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div>
+      <div class="label">Contact</div>
+      <div class="mail" id="mail" style="margin-top:.5rem">othmanedhilou4@gmail.com</div>
+    </div>
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+      <button type="button" class="copy" id="copy-mail">Copier l'e-mail</button>
+      <a class="copy" style="text-decoration:none" href="https://github.com/othmanedhilou">GitHub</a>
+      <a class="copy" style="text-decoration:none" href="https://www.linkedin.com/in/othmane-dhilou-783169300">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('[data-cat]'));
+  var btns=[].slice.call(document.querySelectorAll('#filters button'));
+  btns.forEach(function(b){
+    var f=b.dataset.f;
+    var n=f==='all'?items.length:items.filter(function(i){return i.dataset.cat.split(' ').indexOf(f)>-1}).length;
+    b.querySelector('.count').textContent=n;
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      items.forEach(function(i){i.classList.toggle('off',f!=='all'&&i.dataset.cat.split(' ').indexOf(f)<0)});
+      document.querySelectorAll('section').forEach(function(s){
+        var cards=s.querySelectorAll('[data-cat]');
+        if(!cards.length)return;
+        s.hidden=[].every.call(cards,function(c){return c.classList.contains('off')});
+      });
+    });
+  });
+  var cb=document.getElementById('copy-mail');
+  cb.addEventListener('click',function(){
+    var t=document.getElementById('mail').textContent;
+    var done=function(){cb.textContent='E-mail copié';setTimeout(function(){cb.textContent="Copier l'e-mail"},1800)};
+    try{navigator.clipboard.writeText(t).then(done,function(){selectMail()})}catch(e){selectMail()}
+    function selectMail(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  });
+})();
+</script>
+</body>
+</html>
